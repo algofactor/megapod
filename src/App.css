@@ -28,3 +28,35 @@
 	font-size: 1.5rem;
 	margin-right: 0.3rem;
 }
+
+.audio-book{
+	width: 60%;
+}
+
+/* audio::-webkit-media-controls-panel{
+	background-color: transparent;
+}
+
+audio::-webkit-media-controls-enclosure{
+	background-color: transparent;
+} */
+
+/* audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button{
+	background-color: #6763FD;
+	border-radius: 50%;
+	margin-right: 1rem;
+} */
+
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display{
+	/* color: #fff; */
+	/* font-size: 1rem; */
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+}
+
+
+/* audio::-webkit-media-controls-mute-button{
+	background-color: #fff;
+} */
