@@ -6,9 +6,13 @@ import {
 	FaPinterest,
 	FaInstagram,
 	FaDribbble,
+	FaBars,
+	FaTimes,
 } from "react-icons/fa";
 import Logo from "../img/logo.png";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { screens } from "../data/Screens";
 
 // Styles
 const Nav = styled.nav`
@@ -17,79 +21,204 @@ const Nav = styled.nav`
 	color: #fff;
 `;
 const NavContainer = styled.div`
-	padding: 2rem 1rem;
+	padding: 1.7rem 1rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 `;
-const NavLogo = styled.img``;
+const NavLogo = styled(Link)`
+	height: 25px;
+	width: auto;
+`;
+const MenuBar = styled.div`
+	display: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.5rem;
+	@media ${screens.laptopS} {
+		display: flex;
+	}
+`;
 const NavLinks = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	@media ${screens.laptopS} {
+		display: none;
+	}
 `;
-const NavLink = styled.div`
+const NavLink = styled(Link)`
 	margin: 0 0.5rem;
-    font-weight: 700;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
 `;
 const SocialLinks = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	@media ${screens.laptopS} {
+		display: none;
+	}
 `;
 const SearchBar = styled.div`
 	display: flex;
 	justify-content: center;
-	/* align-items: center; */
 	margin: 0 0.5rem;
+	&:last-of-type {
+		margin: 0;
+	}
+	@media ${screens.laptopS} {
+		display: none;
+	}
 `;
 const Input = styled.input`
 	background-color: transparent;
 	border: 0;
 	outline: none;
 	color: #fff;
-    margin-right: .5rem;
 `;
-const SocialLink = styled.div`
+const SocialLink = styled(Link)`
+	color: #fff;
+	text-decoration: none;
 	margin: 0 0.5rem;
+	&:hover {
+		color: #6763fd;
+	}
 `;
 
-const Navbar = () => {
+const SideNav = styled.div`
+	@media ${screens.laptopS} {
+	}
+`;
+
+const SideSearch = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 2rem;
+`;
+
+const SideInput = styled.input`
+	background-color: transparent;
+	border: 0;
+	outline: none;
+	color: #fff;
+	width: 80%;
+	font-size: 1rem;
+	&::placeholder {
+		color: #fff;
+	}
+`;
+
+const SideLogo = styled(Link)`
+	width: 200px;
+	height: auto;
+	margin-bottom: 2rem;
+`;
+
+const SideLinks = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+`;
+const SideLink = styled(Link)`
+	margin: 0.5rem 0;
+	font-size: 90%;
+	font-weight: 500;
+	color: #fff;
+	text-decoration: none;
+`;
+
+const SideSocials = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
+
+const Navbar = ({nav, showNav, closeNav}) => {
+	
+
 	return (
 		<Nav>
 			<NavContainer>
-				<NavLogo src={Logo} placeholder='Search and hit enter...' />
+				<SideNav className={nav ? "nav active" : "nav"}>
+					<SideSearch>
+						<SideInput type='search' placeholder='Search and hit enter...' />
+						<SocialLink to='/' onClick={closeNav}>
+							<FaSearch />
+						</SocialLink>
+					</SideSearch>
+					<SideLogo to='/' onClick={closeNav}>
+						<img src={Logo} alt='Logo' />
+					</SideLogo>
+					<SideLinks>
+						<SideLink to='/' onClick={closeNav}>Home</SideLink>
+						<SideLink to='/' onClick={closeNav}>About</SideLink>
+						<SideLink to='/' onClick={closeNav}>Episodes</SideLink>
+						<SideLink to='/' onClick={closeNav}>Pages</SideLink>
+						<SideLink to='/' onClick={closeNav}>Contact</SideLink>
+					</SideLinks>
+					<SideSocials>
+						<SearchBar>
+							<Input type='search' placeholder='Search and hit enter...' />
+							<SocialLink to='/' onClick={closeNav}>
+								<FaSearch />
+							</SocialLink>
+						</SearchBar>
+						<SocialLink to='/' onClick={closeNav}>
+							<FaFacebookF />
+						</SocialLink>
+						<SocialLink to='/' onClick={closeNav}>
+							<FaTwitter />
+						</SocialLink>
+						<SocialLink to='/' onClick={closeNav}>
+							<FaPinterest />
+						</SocialLink>
+						<SocialLink to='/' onClick={closeNav}>
+							<FaInstagram />
+						</SocialLink>
+						<SocialLink to='/' onClick={closeNav}>
+							<FaDribbble />
+						</SocialLink>
+					</SideSocials>
+				</SideNav>
+				<NavLogo to='/'>
+					<img src={Logo} alt='Logo' />
+				</NavLogo>
+				<MenuBar onClick={showNav}>
+					{nav ? <FaTimes /> : <FaBars />}
+				</MenuBar>
 				<NavLinks>
-					<NavLink>Home</NavLink>
-					<NavLink>About</NavLink>
-					<NavLink>Episodes</NavLink>
-					<NavLink>Pages</NavLink>
-					<NavLink>Contact</NavLink>
+					<NavLink to='/'>Home</NavLink>
+					<NavLink to='/'>About</NavLink>
+					<NavLink to='/'>Episodes</NavLink>
+					<NavLink to='/'>Pages</NavLink>
+					<NavLink to='/'>Contact</NavLink>
 				</NavLinks>
 				<SocialLinks>
 					<SearchBar>
-						<Input
-							type='search'
-							placeholder='Search and hit enter...'
-						/>
-						<FaSearch />
+						<Input type='search' placeholder='Search and hit enter...' />
+						<SocialLink to='/'>
+							<FaSearch />
+						</SocialLink>
 					</SearchBar>
-					<SocialLink>
+					<SocialLink to='/'>
 						<FaFacebookF />
 					</SocialLink>
-					<SocialLink>
+					<SocialLink to='/'>
 						<FaTwitter />
 					</SocialLink>
-					<SocialLink>
+					<SocialLink to='/'>
 						<FaPinterest />
 					</SocialLink>
-					<SocialLink>
+					<SocialLink to='/'>
 						<FaInstagram />
 					</SocialLink>
-					<SocialLink>
+					<SocialLink to='/'>
 						<FaDribbble />
 					</SocialLink>
 				</SocialLinks>
