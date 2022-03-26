@@ -18,4 +18,34 @@ export const UpcomingData = [
         name: '01',
         music: Music1
     },
+    {
+        date: '10 Jun 2020',
+        artist: 'by Carl Jones',
+        genre: 'Radio, Musician, Camp',
+        title: 'Episode 02: 6 Powerful tips to creating testimonials that sell your product',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
+        image: Image2,
+        name: '02',
+        music: Music2
+    },
+    {
+        date: '7 Jul 2020',
+        artist: 'by Sam Smith',
+        genre: 'Radio, Musician, Camp',
+        title: 'Episode 03: 6 Powerful tips to creating testimonials that sell your product',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
+        image: Image3,
+        name: '03',
+        music: Music3
+    },
+    {
+        date: '20 Jul 2020',
+        artist: 'by Greg Peeler',
+        genre: 'Radio, Musician, Camp',
+        title: 'Episode 01: 6 Powerful tips to creating testimonials that sell your product',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
+        image: Image4,
+        name: '04',
+        music: Music4
+    },
 ]

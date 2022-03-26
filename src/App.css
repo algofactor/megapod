@@ -19,35 +19,40 @@
 
 .nav.active {
 	display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
-.header-icon{
+.header-icon {
 	font-size: 1.5rem;
 	margin-right: 0.3rem;
 }
 
-.audio-book{
+.audio-book {
 	width: 60%;
 }
 
-.white{
+.white {
 	color: #fff;
 }
 
-.grey{
+.grey {
 	color: #b7b7b7;
 }
 
-@media screen and (max-width: 650px ) {
-	.audio-book{
+@media screen and (max-width: 650px) {
+	.audio-book {
 		width: 100%;
 	}
 
-	.header-icon{
-		color: #6763FD;
+	.header-icon {
+		color: #6763fd;
+	}
+
+	audio::-webkit-media-controls-time-remaining-display,
+	audio::-webkit-media-controls-current-time-display {
+		font-size: 90%;
 	}
 }
 
@@ -60,20 +65,17 @@ audio::-webkit-media-controls-enclosure{
 } */
 
 audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button{
-	background-color: #6763FD;
+audio::-webkit-media-controls-mute-button {
+	background-color: #6763fd;
 	border-radius: 50%;
-	margin-right: 1rem;
+	margin-right: 0.5rem;
 }
 
 audio::-webkit-media-controls-time-remaining-display,
-audio::-webkit-media-controls-current-time-display{
-	/* color: #fff; */
-	/* font-size: 1rem; */
+audio::-webkit-media-controls-current-time-display {
 	font-family: "Nunito", sans-serif;
 	font-weight: 700;
 }
-
 
 /* audio::-webkit-media-controls-mute-button{
 	background-color: #fff;
