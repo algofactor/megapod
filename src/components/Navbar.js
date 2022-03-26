@@ -19,6 +19,9 @@ const Nav = styled.nav`
 	width: 100%;
 	background-color: #000;
 	color: #fff;
+	/* position: absolute;
+	top: 0;
+	left: 0; */
 `;
 const NavContainer = styled.div`
 	padding: 1.7rem 1rem;

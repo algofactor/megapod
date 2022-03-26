@@ -4,7 +4,7 @@ import HeroSection from './HeroSection'
 const MainHome = ({closeNav}) => {
   return (
     <div onClick={closeNav}>
-        <HeroSection />
+        
     </div>
   )
 }
