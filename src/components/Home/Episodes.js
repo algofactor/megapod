@@ -5,9 +5,9 @@ import {screens} from '../../data/Screens'
 
 // Styles
 const EpisodesContainer = styled.div`
-  padding: 6rem 3rem;
+  padding: 8rem 3rem 11rem 3rem ;
   @media ${screens.tabletS} {
-    padding: 6rem 1rem;
+    padding: 8rem 1rem 11rem 1rem;
   }
 `
 const Header = styled.p`

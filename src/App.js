@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 
 const App = () => {
@@ -17,7 +18,9 @@ const App = () => {
 			<Routes>
 				<Route path='/' element={<Home nav={nav} showNav={showNav} closeNav={closeNav} />} />
 			</Routes>
+			<Footer />
 		</Router>
+		
 	);
 };
 
