@@ -3,6 +3,8 @@ import { UpcomingData } from "../../data/UpcomingData";
 import Audio from "../Audio";
 import styled from "styled-components";
 import { screens } from "../../data/Screens";
+import {IoCalendarNumberSharp, IoPricetagsOutline} from 'react-icons/io5'
+import {FaUserAlt} from "react-icons/fa"
 
 // Styles
 const UpcomingCardContainer = styled.div`
@@ -46,7 +48,17 @@ const CardDetail = styled.div`
         margin-right: 0;
     }
 `;
-const DetailText = styled.p``;
+const DetailText = styled.p`
+	display: flex;
+	align-items: center;
+`;
+
+const DetailIcon = styled.p`
+	color: #6763fd;
+	font-size: 1.2rem;
+	margin-right: .3rem;
+`
+
 const CardHeader = styled.p`
 	font-size: 1.3rem;
 	color: #353535;
@@ -69,13 +81,13 @@ const UpcomingCard = () => {
 			<CardContent>
 				<CardDetails>
 					<CardDetail>
-						<DetailText>{data.date}</DetailText>
+						<DetailText><DetailIcon><IoCalendarNumberSharp /></DetailIcon>{data.date}</DetailText>
 					</CardDetail>
 					<CardDetail>
-						<DetailText>{data.artist}</DetailText>
+						<DetailText><DetailIcon><FaUserAlt /></DetailIcon>{data.artist}</DetailText>
 					</CardDetail>
 					<CardDetail>
-						<DetailText>{data.genre}</DetailText>
+						<DetailText><DetailIcon><IoPricetagsOutline /></DetailIcon>{data.genre}</DetailText>
 					</CardDetail>
 				</CardDetails>
 				<CardHeader>{data.title}</CardHeader>

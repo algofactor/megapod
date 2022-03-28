@@ -72,7 +72,7 @@ const Button1 = styled(Link)`
 	font-weight: 700;
 	padding: 1rem 1.5rem;
 	margin-right: 1rem;
-	width: 150px;
+	width: 170px;
 	display: flex;
 	justify-content: center;
 	@media ${screens.tabletS} {
@@ -87,7 +87,7 @@ const Button2 = styled(Link)`
 	font-size: 90%;
 	font-weight: 700;
 	padding: 1rem 1.5rem;
-	width: 150px;
+	width: 170px;
 	display: flex;
 	justify-content: center;
 `;
