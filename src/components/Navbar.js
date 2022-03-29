@@ -158,9 +158,9 @@ const Navbar = ({nav, showNav, closeNav}) => {
 					<SideLinks>
 						<SideLink to='/' onClick={closeNav}>Home</SideLink>
 						<SideLink to='/about' onClick={closeNav}>About</SideLink>
-						<SideLink to='/' onClick={closeNav}>Episodes</SideLink>
+						<SideLink to='/episodes' onClick={closeNav}>Episodes</SideLink>
 						<SideLink to='/' onClick={closeNav}>Pages</SideLink>
-						<SideLink to='/' onClick={closeNav}>Contact</SideLink>
+						<SideLink to='/contact' onClick={closeNav}>Contact</SideLink>
 					</SideLinks>
 					<SideSocials>
 						<SearchBar>
@@ -195,9 +195,9 @@ const Navbar = ({nav, showNav, closeNav}) => {
 				<NavLinks>
 					<NavLink to='/'>Home</NavLink>
 					<NavLink to='/about'>About</NavLink>
-					<NavLink to='/'>Episodes</NavLink>
+					<NavLink to='/episodes'>Episodes</NavLink>
 					<NavLink to='/'>Pages</NavLink>
-					<NavLink to='/'>Contact</NavLink>
+					<NavLink to='/contact'>Contact</NavLink>
 				</NavLinks>
 				<SocialLinks>
 					<SearchBar>
