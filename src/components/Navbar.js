@@ -19,9 +19,6 @@ const Nav = styled.nav`
 	width: 100%;
 	background-color: #000;
 	color: #fff;
-	/* position: absolute;
-	top: 0;
-	left: 0; */
 `;
 const NavContainer = styled.div`
 	padding: 1.7rem 1rem;
@@ -160,7 +157,7 @@ const Navbar = ({nav, showNav, closeNav}) => {
 					</SideLogo>
 					<SideLinks>
 						<SideLink to='/' onClick={closeNav}>Home</SideLink>
-						<SideLink to='/' onClick={closeNav}>About</SideLink>
+						<SideLink to='/about' onClick={closeNav}>About</SideLink>
 						<SideLink to='/' onClick={closeNav}>Episodes</SideLink>
 						<SideLink to='/' onClick={closeNav}>Pages</SideLink>
 						<SideLink to='/' onClick={closeNav}>Contact</SideLink>
@@ -197,7 +194,7 @@ const Navbar = ({nav, showNav, closeNav}) => {
 				</MenuBar>
 				<NavLinks>
 					<NavLink to='/'>Home</NavLink>
-					<NavLink to='/'>About</NavLink>
+					<NavLink to='/about'>About</NavLink>
 					<NavLink to='/'>Episodes</NavLink>
 					<NavLink to='/'>Pages</NavLink>
 					<NavLink to='/'>Contact</NavLink>
