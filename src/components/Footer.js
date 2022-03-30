@@ -29,7 +29,7 @@ const FooterSignUp = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -130px;
+    top: -100px;
     @media ${screens.laptopS} {
         justify-content: flex-start;
         flex-direction: column;

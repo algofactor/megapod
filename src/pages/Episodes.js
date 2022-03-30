@@ -1,8 +1,13 @@
 import React from 'react'
+import HeroSection from '../components/Episodes/HeroSection'
+import Upcoming from '../components/Home/Upcoming'
 
 const Episodes = ({nav, showNav, closeNav}) => {
   return (
-    <div>Episodes</div>
+    <>
+      <HeroSection nav={nav} showNav={showNav} closeNav={closeNav}/>
+      <Upcoming />
+    </>
   )
 }
 
