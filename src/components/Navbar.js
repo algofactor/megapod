@@ -17,8 +17,8 @@ import { screens } from "../data/Screens";
 // Styles
 const Nav = styled.nav`
 	width: 100%;
-	background-color: #000;
 	color: #fff;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 `;
 const NavContainer = styled.div`
 	padding: 1.7rem 1rem;
@@ -80,6 +80,9 @@ const Input = styled.input`
 	border: 0;
 	outline: none;
 	color: #fff;
+	&::placeholder{
+		color: rgba(255, 255, 255, 0.582);
+	}
 `;
 const SocialLink = styled(Link)`
 	color: #fff;
@@ -159,7 +162,7 @@ const Navbar = ({nav, showNav, closeNav}) => {
 						<SideLink to='/' onClick={closeNav}>Home</SideLink>
 						<SideLink to='/about' onClick={closeNav}>About</SideLink>
 						<SideLink to='/episodes' onClick={closeNav}>Episodes</SideLink>
-						<SideLink to='/' onClick={closeNav}>Pages</SideLink>
+						{/* <SideLink to='/' onClick={closeNav}>Pages</SideLink> */}
 						<SideLink to='/contact' onClick={closeNav}>Contact</SideLink>
 					</SideLinks>
 					<SideSocials>
@@ -196,7 +199,7 @@ const Navbar = ({nav, showNav, closeNav}) => {
 					<NavLink to='/'>Home</NavLink>
 					<NavLink to='/about'>About</NavLink>
 					<NavLink to='/episodes'>Episodes</NavLink>
-					<NavLink to='/'>Pages</NavLink>
+					{/* <NavLink to='/'>Pages</NavLink> */}
 					<NavLink to='/contact'>Contact</NavLink>
 				</NavLinks>
 				<SocialLinks>

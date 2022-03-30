@@ -13,7 +13,7 @@ const EpisodesContainer = styled.div`
 const Header = styled.p`
   text-align: center;
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #353535;
   margin-bottom: 2rem;
 `

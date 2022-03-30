@@ -1,8 +1,12 @@
 import React from 'react'
+import HeroSection from '../components/About/HeroSection'
 
 const About = ({nav, showNav, closeNav}) => {
   return (
-    <div>About</div>
+    <>
+      <HeroSection nav={nav} showNav={showNav} closeNav={closeNav}/>
+      <HeroSection />
+    </>
   )
 }
 
