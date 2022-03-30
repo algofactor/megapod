@@ -4,7 +4,6 @@ import styled from "styled-components";
 import HeroBg from "../../img/breadcrumb-bg.jpg";
 import { Link } from "react-router-dom";
 import {FaHome, FaAngleRight} from 'react-icons/fa'
-import HeroAudio from "../HeroAudio";
 
 // Styles
 const HeroContainer = styled.div`
