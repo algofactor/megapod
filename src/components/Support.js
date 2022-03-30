@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import SupportBgd from '../../img/breadcrumb-bg.jpg'
-import { screens } from '../../data/Screens'
+import { screens } from '../data/Screens'
+import { ButtonSmall } from './ButtonSmall'
 
 // Styles
 const SupportContainer = styled.div`
@@ -10,7 +10,7 @@ const SupportContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 6rem 1rem;
-    background-image: url(${SupportBgd});
+    background-image: url(${props => props.supportBg});
     background-position: center;
     background-size: cover;
     color: #fff;
@@ -32,26 +32,26 @@ const SupportDesc = styled.p`
         font-size: 1rem;
     }
 `
-const SupportBtn = styled(Link)`
-    text-decoration: none;
-    text-transform: capitalize;
-	color: #fff;
-	background-color: #6763fd;
-	border-radius: 7px;
-	font-size: 90%;
-	font-weight: 700;
-	padding: 1rem 1.5rem;
-	width: 120px;
-	display: flex;
-	justify-content: center;
-`
+// const SupportBtn = styled(Link)`
+//     text-decoration: none;
+//     text-transform: capitalize;
+// 	color: #fff;
+// 	background-color: #6763fd;
+// 	border-radius: 7px;
+// 	font-size: 90%;
+// 	font-weight: 700;
+// 	padding: 1rem 1.5rem;
+// 	width: 120px;
+// 	display: flex;
+// 	justify-content: center;
+// `
 
-const Support = () => {
+const Support = ({img}) => {
   return (
-    <SupportContainer>
+    <SupportContainer supportBg={img}>
         <SupportHeader>Support the show</SupportHeader>
         <SupportDesc>Enjoy listening to our podcast? Consider making a donation!</SupportDesc>
-        <SupportBtn to='/'>Make a donation</SupportBtn>
+        <ButtonSmall>Make a donation</ButtonSmall>
     </SupportContainer>
   )
 }

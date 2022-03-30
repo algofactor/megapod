@@ -48,11 +48,11 @@ const HeroLinkIcon = styled.span`
     margin-right: .5rem;
 `;
 
-const HeroSection = () => {
+const HeroSection = ({ nav, showNav, closeNav }) => {
 	return (
 		<HeroContainer>
-			<Navbar />
-			<HeroContent>
+			<Navbar nav={nav} showNav={showNav} closeNav={closeNav} />
+			<HeroContent onClick={closeNav}>
 				<HeroTitle>About</HeroTitle>
 				<HeroLinks>
 					<HeroLink to='/'>
