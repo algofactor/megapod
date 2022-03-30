@@ -94,6 +94,7 @@ const SocialLink = styled(Link)`
 `;
 
 const SideNav = styled.div`
+	z-index: 20;
 	@media ${screens.laptopS} {
 	}
 `;
@@ -143,8 +144,6 @@ const SideSocials = styled.div`
 `;
 
 const Navbar = ({nav, showNav, closeNav}) => {
-	
-
 	return (
 		<Nav>
 			<NavContainer>

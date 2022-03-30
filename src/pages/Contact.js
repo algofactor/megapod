@@ -1,8 +1,11 @@
 import React from 'react'
+import HeroSection from '../components/Contact/HeroSection'
 
 const Contact = ({nav, showNav, closeNav}) => {
   return (
-    <div>Contact</div>
+    <>
+      <HeroSection nav={nav} showNav={showNav} closeNav={closeNav}/>
+    </>
   )
 }
 
