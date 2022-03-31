@@ -8,7 +8,6 @@ const Contact = ({nav, showNav, closeNav}) => {
     <>
       <HeroSection nav={nav} showNav={showNav} closeNav={closeNav}/>
       <ContactDetails />
-      <ContactMessage />
     </>
   )
 }

@@ -4,15 +4,20 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoMdClock } from "react-icons/io";
 import { FiPhoneCall } from "react-icons/fi";
 import { screens } from "../../data/Screens";
+import ContactMessage from "./ContactMessage";
 
 // Styles
 const ContactDetailsContainer = styled.div`
 	padding: 5rem 2rem;
+	@media ${screens.laptopS} {
+		padding: 5rem 1rem;
+	}
 `;
 const DetailGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 2rem;
+	margin-bottom: 2rem;
 	@media ${screens.laptopS} {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -80,6 +85,7 @@ const ContactDetails = () => {
 					<DetailDesc>( Sunday Closed)</DetailDesc>
 				</DetailCard>
 			</DetailGrid>
+			<ContactMessage />
 		</ContactDetailsContainer>
 	);
 };
