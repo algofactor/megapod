@@ -53,7 +53,7 @@ const DetailText = styled.p`
 	align-items: center;
 `;
 
-const DetailIcon = styled.p`
+const DetailIcon = styled.span`
 	color: #6763fd;
 	font-size: 1.2rem;
 	margin-right: .3rem;
@@ -76,7 +76,7 @@ const CardDesc = styled.p`
 
 const UpcomingCard = () => {
 	return UpcomingData.map((data) => (
-		<UpcomingCardContainer>
+		<UpcomingCardContainer key={data.name}>
 			<CardImage src={data.image} alt={data.name} />
 			<CardContent>
 				<CardDetails>

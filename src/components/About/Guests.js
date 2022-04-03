@@ -62,7 +62,7 @@ const Guests = () => {
 			<Title>Featured Guests</Title>
 			<GuestGrid>
 				{GuestsData.map((data) => (
-					<GuestCard>
+					<GuestCard key={data.name}>
 						<Image src={data.image} />
 						<GuestName>{data.name}</GuestName>
 						<GuestTitle>{data.title}</GuestTitle>
