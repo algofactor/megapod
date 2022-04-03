@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components"
-import { FaShareAlt, FaDownload } from "react-icons/fa";
 import Music1 from "../music-files/1.mp3";
 import HeroArtist from "../img/hero/hero-track.jpg";
 import { screens } from "../data/Screens";
+import Audio from "./Audio";
 
 // Styles
 const AudioContent = styled.div`
@@ -54,34 +53,6 @@ const DescTitle = styled.div`
 `;
 const DescName = styled.div``;
 
-const AudioPlayer = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	@media ${screens.tabletS} {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-`;
-const AudioLinks = styled.div`
-	display: flex;
-	@media ${screens.tabletS} {
-		margin-top: 2rem;
-	}
-`;
-const AudioLink = styled(Link)`
-	text-decoration: none;
-	color: #fff;
-	margin-left: 1rem;
-	display: flex;
-	align-items: center;
-`;
-
-const AudioLinkName = styled.p`
-	margin-left: 0.5rem;
-`;
-
 const HeroAudio = ({color}) => {
 	return (
 		<AudioContent>
@@ -93,19 +64,7 @@ const HeroAudio = ({color}) => {
 						<DescName>Kyle Hawkins</DescName>
 					</ArtistDesc>
 				</Artist>
-				<AudioPlayer>
-					<audio src={Music1} controls className='audio-book'></audio>
-					<AudioLinks>
-						<AudioLink to=''>
-							<FaShareAlt />
-							<AudioLinkName>Share</AudioLinkName>
-						</AudioLink>
-						<AudioLink to=''>
-							<FaDownload />
-							<AudioLinkName>Download</AudioLinkName>
-						</AudioLink>
-					</AudioLinks>
-				</AudioPlayer>
+				<Audio music={Music1} />
 			</AudioContainer>
 		</AudioContent>
 	);

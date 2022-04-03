@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components"
 import { screens } from "../data/Screens";
-import { Link } from "react-router-dom";
 import { FaShareAlt, FaDownload } from "react-icons/fa";
 
 // Styles
@@ -21,7 +20,7 @@ const AudioLinks = styled.div`
 		margin-top: 2rem;
 	}
 `;
-const AudioLink = styled(Link)`
+const AudioLink = styled.a`
 	text-decoration: none;
 	color: #b7b7b7;
 	font-size: 90%;
@@ -43,7 +42,7 @@ const Audio = ({music}) => {
 					<FaShareAlt />
 					<AudioLinkName>Share</AudioLinkName>
 				</AudioLink>
-				<AudioLink to=''>
+				<AudioLink href={music} download="Podcast audio">
 					<FaDownload />
 					<AudioLinkName>Download</AudioLinkName>
 				</AudioLink>
