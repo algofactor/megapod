@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	FaSearch,
 	FaFacebookF,
@@ -152,16 +152,19 @@ const SideSocials = styled.div`
 const Navbar = ({ nav, showNav, closeNav }) => {
 	// Logic
 	const [visible, setVisible] = useState(false)
-	const toggleVisible = () => {
-		const scrolled = document.documentElement.scrollTop;
-		if (scrolled > 250) {
-			setVisible(true);
-		} else if (scrolled <= 250) {
-			setVisible(false);
-		}
-	};
+	useEffect(() => {
+		const toggleVisible = () => {
+			const scrolled = document.documentElement.scrollTop;
+			if (scrolled > 250) {
+				setVisible(true);
+			} else if (scrolled <= 250) {
+				setVisible(false);
+			}
+		};
+		window.addEventListener("scroll", toggleVisible);
+	}, [])
+	
 
-	window.addEventListener("scroll", toggleVisible);
 	return (
 		<Nav visible={visible}>
 			<NavContainer>
