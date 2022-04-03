@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	FaSearch,
 	FaFacebookF,
@@ -19,6 +19,12 @@ const Nav = styled.nav`
 	width: 100%;
 	color: #fff;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	background-color: ${props => props.visible ? "black" : "transparent"};
+	backdrop-filter: blur(15px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
 `;
 const NavContainer = styled.div`
 	padding: 1.7rem 1rem;
@@ -80,7 +86,7 @@ const Input = styled.input`
 	border: 0;
 	outline: none;
 	color: #fff;
-	&::placeholder{
+	&::placeholder {
 		color: rgba(255, 255, 255, 0.582);
 	}
 `;
@@ -143,9 +149,21 @@ const SideSocials = styled.div`
 	flex-direction: row;
 `;
 
-const Navbar = ({nav, showNav, closeNav}) => {
+const Navbar = ({ nav, showNav, closeNav }) => {
+	// Logic
+	const [visible, setVisible] = useState(false)
+	const toggleVisible = () => {
+		const scrolled = document.documentElement.scrollTop;
+		if (scrolled > 250) {
+			setVisible(true);
+		} else if (scrolled <= 250) {
+			setVisible(false);
+		}
+	};
+
+	window.addEventListener("scroll", toggleVisible);
 	return (
-		<Nav>
+		<Nav visible={visible}>
 			<NavContainer>
 				<SideNav className={nav ? "nav active" : "nav"}>
 					<SideSearch>
@@ -158,11 +176,19 @@ const Navbar = ({nav, showNav, closeNav}) => {
 						<img src={Logo} alt='Logo' />
 					</SideLogo>
 					<SideLinks>
-						<SideLink to='/' onClick={closeNav}>Home</SideLink>
-						<SideLink to='/about' onClick={closeNav}>About</SideLink>
-						<SideLink to='/episodes' onClick={closeNav}>Episodes</SideLink>
+						<SideLink to='/' onClick={closeNav}>
+							Home
+						</SideLink>
+						<SideLink to='/about' onClick={closeNav}>
+							About
+						</SideLink>
+						<SideLink to='/episodes' onClick={closeNav}>
+							Episodes
+						</SideLink>
 						{/* <SideLink to='/' onClick={closeNav}>Pages</SideLink> */}
-						<SideLink to='/contact' onClick={closeNav}>Contact</SideLink>
+						<SideLink to='/contact' onClick={closeNav}>
+							Contact
+						</SideLink>
 					</SideLinks>
 					<SideSocials>
 						<SearchBar>
@@ -191,9 +217,7 @@ const Navbar = ({nav, showNav, closeNav}) => {
 				<NavLogo to='/'>
 					<img src={Logo} alt='Logo' />
 				</NavLogo>
-				<MenuBar onClick={showNav}>
-					{nav ? <FaTimes /> : <FaBars />}
-				</MenuBar>
+				<MenuBar onClick={showNav}>{nav ? <FaTimes /> : <FaBars />}</MenuBar>
 				<NavLinks>
 					<NavLink to='/'>Home</NavLink>
 					<NavLink to='/about'>About</NavLink>
