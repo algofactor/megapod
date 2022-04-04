@@ -67,18 +67,16 @@ const BottomIcon = styled.span`
 
 const EpisodeCard = ({visible, setVisible}) => {
 	const [selected, setSelected] = useState(0)
-	// const handleSelect = (id) =>{
-	// 	setSelected(id)
-	// 	if(selected === id){
-	// 		// console.log(id)
-	// 		setVisible(true)
-	// 	}
-	// }
+	const handleSelect = (id) =>{
+		setSelected(id)
+		if(selected === id){
+			// console.log(id)
+			setVisible(true)
+		}
+	}
 	return EpisodeData.map((data) => (
-		<CardContainer key={data.title} img={data.image}>	
+		<CardContainer key={data.title} img={data.image} onClick={()=> handleSelect(data.id)}>	
 			{/* {selected === data.id ? console.log(data.id): null}		 */}
-			{/* onClick={()=> handleSelect(data.id)} */}
-			
 			<TopLevel>
 				<TopOne>
 					<IoPricetagsOutline />
