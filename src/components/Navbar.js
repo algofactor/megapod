@@ -36,6 +36,18 @@ const NavContainer = styled.div`
 const NavLogo = styled(Link)`
 	height: 25px;
 	width: auto;
+	@media ${screens.tabletS} {
+		height: 15px;
+		width: auto;
+	}
+`;
+const LogoImg = styled.img`
+	height: 25px;
+	width: auto;
+	@media ${screens.tabletS} {
+		height: 23px;
+		width: auto;
+	}
 `;
 const MenuBar = styled.div`
 	display: none;
@@ -218,7 +230,7 @@ const Navbar = ({ nav, showNav, closeNav }) => {
 					</SideSocials>
 				</SideNav>
 				<NavLogo to='/'>
-					<img src={Logo} alt='Logo' />
+					<LogoImg src={Logo} alt='Logo' />
 				</NavLogo>
 				<MenuBar onClick={showNav}>{nav ? <FaTimes /> : <FaBars />}</MenuBar>
 				<NavLinks>

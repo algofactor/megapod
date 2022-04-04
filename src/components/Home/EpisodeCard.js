@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
 	IoPricetagsOutline,
@@ -44,6 +44,7 @@ const MidLevel = styled.div`
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
+	/* display: none; */
 `;
 
 const BottomLevel = styled.div``;
@@ -56,6 +57,7 @@ const BottomText = styled.p`
 const BottomDate = styled.p`
 	display: flex;
 	font-size: 95%;
+	/* display: ${props => props.visible ? 'flex' : 'none'}; */
 `;
 const BottomIcon = styled.span`
 	color: #6763fd;
@@ -64,9 +66,19 @@ const BottomIcon = styled.span`
 `;
 
 const EpisodeCard = ({visible, setVisible}) => {
-	
+	const [selected, setSelected] = useState(0)
+	// const handleSelect = (id) =>{
+	// 	setSelected(id)
+	// 	if(selected === id){
+	// 		// console.log(id)
+	// 		setVisible(true)
+	// 	}
+	// }
 	return EpisodeData.map((data) => (
-		<CardContainer key={data.title} img={data.image}>
+		<CardContainer key={data.title} img={data.image}>	
+			{/* {selected === data.id ? console.log(data.id): null}		 */}
+			{/* onClick={()=> handleSelect(data.id)} */}
+			
 			<TopLevel>
 				<TopOne>
 					<IoPricetagsOutline />
@@ -82,7 +94,7 @@ const EpisodeCard = ({visible, setVisible}) => {
 			</MidLevel>
 			<BottomLevel>
 				<BottomText>{data.title}</BottomText>
-				<BottomDate>
+				<BottomDate visible={visible}>
 					<BottomIcon>
 						<IoCalendarNumberSharp />
 					</BottomIcon>{" "}
