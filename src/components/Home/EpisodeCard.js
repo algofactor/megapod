@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
 	IoPricetagsOutline,
@@ -7,6 +7,7 @@ import {
 } from "react-icons/io5";
 import { FaPlayCircle } from "react-icons/fa";
 import { EpisodeData } from "../../data/EpisodeData";
+
 // Styles
 const CardContainer = styled.div`
 	border-radius: 20px;
@@ -19,6 +20,7 @@ const CardContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	cursor: pointer;
 `;
 const TopLevel = styled.div`
 	display: flex;
@@ -38,13 +40,14 @@ const TopText = styled.p`
 	margin-left: 0.5rem;
 `;
 const MidLevel = styled.div`
-	/* text-align: center; */
 	color: #6763fd;
 	font-size: 3.5rem;
 	cursor: pointer;
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
-	/* display: none; */
+	/* visibility: hidden; */
+	display: none;
+	transition: all 0.5s ease;
 `;
 
 const BottomLevel = styled.div``;
@@ -55,9 +58,10 @@ const BottomText = styled.p`
 	text-transform: capitalize;
 `;
 const BottomDate = styled.p`
-	display: flex;
+	/* display: flex; */
 	font-size: 95%;
-	/* display: ${props => props.visible ? 'flex' : 'none'}; */
+	/* visibility: hidden; */
+	display: none;
 `;
 const BottomIcon = styled.span`
 	color: #6763fd;
@@ -65,18 +69,9 @@ const BottomIcon = styled.span`
 	font-size: 1.1rem;
 `;
 
-const EpisodeCard = ({visible, setVisible}) => {
-	const [selected, setSelected] = useState(0)
-	const handleSelect = (id) =>{
-		setSelected(id)
-		if(selected === id){
-			// console.log(id)
-			setVisible(true)
-		}
-	}
+const EpisodeCard = () => {
 	return EpisodeData.map((data) => (
-		<CardContainer key={data.title} img={data.image} onClick={()=> handleSelect(data.id)}>	
-			{/* {selected === data.id ? console.log(data.id): null}		 */}
+		<CardContainer key={data.title} img={data.image} className='card-container'>
 			<TopLevel>
 				<TopOne>
 					<IoPricetagsOutline />
@@ -87,15 +82,15 @@ const EpisodeCard = ({visible, setVisible}) => {
 					<TopText>{data.time}</TopText>
 				</TopOne>
 			</TopLevel>
-			<MidLevel>
+			<MidLevel className="play-icon">
 				<FaPlayCircle />
 			</MidLevel>
 			<BottomLevel>
 				<BottomText>{data.title}</BottomText>
-				<BottomDate visible={visible}>
+				<BottomDate className='card-date'>
 					<BottomIcon>
 						<IoCalendarNumberSharp />
-					</BottomIcon>{" "}
+					</BottomIcon>
 					{data.date}
 				</BottomDate>
 			</BottomLevel>

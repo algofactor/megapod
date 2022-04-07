@@ -16,7 +16,7 @@ const HeroContainer = styled.div`
 	color: #fff;
 `;
 const HeroContent = styled.div`
-	padding: 8rem 2rem 0 2rem;
+	padding: 15rem 2rem 0 2rem;
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 9rem;

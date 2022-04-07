@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import EpisodeCard from './EpisodeCard'
 import styled from "styled-components"
 import {screens} from '../../data/Screens'
@@ -31,13 +31,11 @@ const EpisodesCards = styled.div`
 `
 
 const Episodes = () => {
-  // Logic
-	const [visible, setVisible] = useState(false)
   return (
     <EpisodesContainer>
       <Header>Latest Episodes</Header>
       <EpisodesCards>
-        <EpisodeCard visible={visible} setVisible={setVisible} />
+        <EpisodeCard />
       </EpisodesCards>
     </EpisodesContainer>
   )
