@@ -43,11 +43,14 @@ const MidLevel = styled.div`
 	color: #6763fd;
 	font-size: 3.5rem;
 	cursor: pointer;
-	/* display: flex; */
 	justify-content: center;
 	/* visibility: hidden; */
-	display: none;
+	display: flex;
+	opacity: 0;
 	transition: all 0.5s ease;
+	${CardContainer}:hover &{
+		opacity: 1;
+	}
 `;
 
 const BottomLevel = styled.div``;
@@ -58,10 +61,13 @@ const BottomText = styled.p`
 	text-transform: capitalize;
 `;
 const BottomDate = styled.p`
-	/* display: flex; */
 	font-size: 95%;
-	/* visibility: hidden; */
-	display: none;
+	display: flex;
+	opacity: 0;
+	transition: all 0.5s ease;
+	${CardContainer}:hover &{
+		opacity: 1;
+	}
 `;
 const BottomIcon = styled.span`
 	color: #6763fd;

@@ -83,13 +83,12 @@ audio::-webkit-media-controls-current-time-display {
 
 
 /* Episodes */
-.card-container:hover .play-icon,
+/* .card-container:hover .play-icon,
 .card-container:hover .card-date  {
 	display: flex;
-	/* transition: all 0.5s ease; */
 }
 .card-container .play-icon,
 .card-container .card-date  {
 	display: none;
 	transition: all 0.5s ease;
-}
+} */
