@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import UpcomingCard from "./UpcomingCard";
 import { screens } from "../../data/Screens";
+import { UpcomingData } from "../../data/UpcomingData";
 
 // Styles
 const UpcomingContainer = styled.div`
@@ -62,6 +63,49 @@ const HeaderLink = styled(Link)`
 const UpcomingCards = styled.div``;
 
 const Upcoming = () => {
+	// Logic
+	const [all, setAll] = useState(true);
+	const [first, setFirst] = useState(false);
+	const [second, setSecond] = useState(false);
+	const [third, setThird] = useState(false);
+	const [fourth, setFourth] = useState(false);
+
+	const handleAll = () => {
+		setAll(true);
+		setFirst(false);
+		setSecond(false);
+		setThird(false);
+		setFourth(false);
+	};
+	const handleFirst = () => {
+		setAll(false);
+		setFirst(true);
+		setSecond(false);
+		setThird(false);
+		setFourth(false);
+	};
+	const handleSecond = () => {
+		setAll(false);
+		setFirst(false);
+		setSecond(true);
+		setThird(false);
+		setFourth(false);
+	};
+	const handleThird = () => {
+		setAll(false);
+		setFirst(false);
+		setSecond(false);
+		setThird(true);
+		setFourth(false);
+	};
+	const handleFourth = () => {
+		setAll(false);
+		setFirst(false);
+		setSecond(false);
+		setThird(false);
+		setFourth(true);
+	};
+
 	return (
 		<>
 			<UpcomingContainer>
@@ -69,16 +113,28 @@ const Upcoming = () => {
 					<HeaderText>Live & Upcoming</HeaderText>
 					<HeaderLinksBox>
 						<HeaderLinks>
-							<HeaderLink to='/'>All</HeaderLink>
-							<HeaderLink to='/'>Enterpreneurship</HeaderLink>
-							<HeaderLink to='/'>Media</HeaderLink>
-							<HeaderLink to='/'>Tech</HeaderLink>
-							<HeaderLink to='/'>Tutorials</HeaderLink>
+							<HeaderLink to='/' onClick={handleAll}>
+								All
+							</HeaderLink>
+							<HeaderLink to='/' onClick={handleFirst}>
+								Enterpreneurship
+							</HeaderLink>
+							<HeaderLink to='/' onClick={handleSecond}>
+								Media
+							</HeaderLink>
+							<HeaderLink to='/' onClick={handleThird}>
+								Tech
+							</HeaderLink>
+							<HeaderLink to='/' onClick={handleFourth}>
+								Tutorials
+							</HeaderLink>
 						</HeaderLinks>
 					</HeaderLinksBox>
 				</UpcomingHeader>
 				<UpcomingCards>
-					<UpcomingCard />
+					{UpcomingData.map((data, index) => {
+						return <UpcomingCard data={data} key={index} />;
+					})}
 				</UpcomingCards>
 			</UpcomingContainer>
 		</>

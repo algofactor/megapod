@@ -1,5 +1,5 @@
 import React from "react";
-import { UpcomingData } from "../../data/UpcomingData";
+// import { UpcomingData } from "../../data/UpcomingData";
 import Audio from "../Audio";
 import styled from "styled-components";
 import { screens } from "../../data/Screens";
@@ -74,9 +74,9 @@ const CardDesc = styled.p`
 	color: #8d8d8d;
 `;
 
-const UpcomingCard = () => {
-	return UpcomingData.map((data) => (
-		<UpcomingCardContainer key={data.name}>
+const UpcomingCard = ({ data }) => {
+	return(
+		<UpcomingCardContainer>
 			<CardImage src={data.image} alt={data.name} />
 			<CardContent>
 				<CardDetails>
@@ -95,7 +95,7 @@ const UpcomingCard = () => {
 				<Audio music={data.music} color='grey' />
 			</CardContent>
 		</UpcomingCardContainer>
-	));
+	);
 };
 
 export default UpcomingCard;

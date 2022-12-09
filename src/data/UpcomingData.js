@@ -15,7 +15,7 @@ export const UpcomingData = [
         title: 'Episode 01: 6 Powerful tips to creating testimonials that sell your product',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
         image: Image1,
-        name: '01',
+        name: '1',
         music: Music1
     },
     {
@@ -25,7 +25,7 @@ export const UpcomingData = [
         title: 'Episode 02: Dealing with technical support',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
         image: Image2,
-        name: '02',
+        name: '2',
         music: Music2
     },
     {
@@ -35,7 +35,7 @@ export const UpcomingData = [
         title: 'Episode 03: The rise and fall of a poker genius',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
         image: Image3,
-        name: '03',
+        name: '3',
         music: Music3
     },
     {
@@ -45,7 +45,7 @@ export const UpcomingData = [
         title: 'Episode 04: Becoming a travel pro in one easy step',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aspernatur, cum dolore necessitatibus accusamus consectetur cupiditate vel architecto sit tenetur, harum reprehenderit expedita explicabo quod magni aut beatae culpa consequatur?',
         image: Image4,
-        name: '04',
+        name: '4',
         music: Music4
     },
 ]
